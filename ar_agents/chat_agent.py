@@ -158,7 +158,6 @@ async def main():
         # Store tools in a dictionary for easy lookup in the tool node
         mcp_tools_dict = {tool.name: tool for tool in mcp_pydantic_tools}
         logging.info(f"Initialized MCP tools: {list(mcp_tools_dict.keys())}")
-
         # Initialize Pydantic Agent
         llm_model = get_llm_model()
         pydantic_agent = Agent(
@@ -218,4 +217,3 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         print("\nChat agent interrupted by user.")
-        # Cleanup should happen in the finally block of main
